@@ -11,4 +11,4 @@ if __name__ == '__main__':
     config = Config()
     warehouse_client = WarehouseClient(config)
     actuator = Actuator(config, warehouse_client)
-    bottle.run(api.make_wsgi_app(actuator), host='127.0.0.1', port=8050)
+    bottle.run(api.make_wsgi_app(actuator), host='127.0.0.1', port=config.get_server_port())
